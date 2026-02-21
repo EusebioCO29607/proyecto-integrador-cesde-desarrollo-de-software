@@ -12,6 +12,7 @@ public class Persons {
         return documentNumber;
     }
 
+
     public void setDocumentNumber(String documentNumber) {
         this.documentNumber = documentNumber;
     }

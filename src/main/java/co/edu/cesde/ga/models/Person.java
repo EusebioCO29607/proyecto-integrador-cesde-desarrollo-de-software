@@ -1,8 +1,8 @@
 package co.edu.cesde.ga.models;
 
-public class Persons {
+public class Person {
     long userId;
-    String cod;
+    String code;
     String documentNumber;
     String firstname;
     String lastname;
@@ -25,12 +25,12 @@ public class Persons {
         this.userId = userId;
     }
 
-    public String getCod() {
-        return cod;
+    public String getCode() {
+        return code;
     }
 
-    public void setCod(String cod) {
-        this.cod = cod;
+    public void setCode(String code) {
+        this.code= code;
     }
 
     public String getFirstname() {
@@ -57,9 +57,9 @@ public class Persons {
         this.status = status;
     }
 
-    public Persons(long userId, String cod, String documentNumber, String firstname, String lastname, boolean status) {
+    public Person(long userId, String code, String documentNumber, String firstname, String lastname, boolean status) {
         this.userId = userId;
-        this.cod = cod;
+        this.code = code;
         this.documentNumber = documentNumber;
         this.firstname = firstname;
         this.lastname = lastname;

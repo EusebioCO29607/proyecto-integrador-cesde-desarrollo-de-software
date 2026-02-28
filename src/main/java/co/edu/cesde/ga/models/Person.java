@@ -71,7 +71,14 @@ public class Person {
     }
     @Override
     public String toString(){
-        return "Person{}" +super.toString();
+        return "Person{" +
+        "userId=" + userId +
+        "code=" + code +
+        "documentNumber+= " + documentNumber +
+        "firstname=" + firstname +
+       "lastname=" +lastname +
+        "status="+ status +
+                '}';
 
 
     }

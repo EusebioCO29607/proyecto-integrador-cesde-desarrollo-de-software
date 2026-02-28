@@ -1,12 +1,12 @@
 package co.edu.cesde.ga.models;
 
 public class Person {
-    long userId;
-    String code;
-    String documentNumber;
-    String firstname;
-    String lastname;
-    boolean status;
+   private long userId;
+    private String code;
+    private String documentNumber;
+    private String firstname;
+    private String lastname;
+    private boolean status;
 
     public String getDocumentNumber() {
         return documentNumber;
@@ -65,4 +65,15 @@ public class Person {
         this.lastname = lastname;
         this.status = status;
     }
+
+    public Person() {
+
+    }
+    @Override
+    public String toString(){
+        return "Person{}" +super.toString();
+
+
+    }
+
 }

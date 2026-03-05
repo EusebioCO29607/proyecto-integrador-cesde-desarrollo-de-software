@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NotApp - Página Principal</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div class="app-layout">
+
+    <!-- ====== SIDEBAR ====== -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <span class="hamburger">&#9776;</span>
+        <h2 class="logo"><span class="logo-not">Not</span><span class="logo-app">App</span></h2>
+      </div>
+
+      <nav class="sidebar-nav">
+        <a href="dashboard.html" class="active">
+          <span class="icon">&#9673;</span> Inicio
+        </a>
+        <a href="attendance.html">
+          <span class="icon">&#128203;</span> Hojas de asistencia
+        </a>
+
+        <div class="sidebar-section-title">Contacto</div>
+        <a href="students.html">
+          <span class="icon">&#127891;</span> Estudiantes
+        </a>
+        <a href="teachers.html">
+          <span class="icon">&#128100;</span> Profesores
+        </a>
+        <a href="#">
+          <span class="icon">&#128101;</span> Grupos
+        </a>
+        <a href="#">
+            <span class="icon">&#128209;</span> Programas
+        </a>
+       
+        <div class="sidebar-section-title">Educación</div>
+        <a href="#">
+          <span class="icon">&#128202;</span> Estadísticas
+        </a>
+        <a href="notes.html">
+          <span class="icon">&#127919;</span> Notas
+        </a>
+        <a href="#">
+          <span class="icon">&#128276;</span> Alertas
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <a href="#">
+          <span class="icon">&#128276;</span> Notificaciones
+        </a>
+      </div>
+
+      <div class="sidebar-user">
+        <div class="user-avatar">NA</div>
+        <span class="user-name">Administrador</span>
+      </div>
+    </aside>
+
+    <!-- ====== CONTENIDO PRINCIPAL ====== -->
+    <main class="main-content">
+      <div class="page-header">
+        <div>
+          <h1>Información</h1>
+          <p class="subtitle">Bienvenido de nuevo, Admin</p>
+        </div>
+      </div>
+
+      <!-- Tarjetas de estadisticas -->
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-label">Estudiantes inscritos</div>
+          <div class="stat-value">128</div>
+          <div class="stat-sub">+12 este mes</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Profesores activos</div>
+          <div class="stat-value">14</div>
+          <div class="stat-sub">2 nuevos</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Asistencia promedio</div>
+          <div class="stat-value">87%</div>
+          <div class="stat-sub">+3% vs mes anterior</div>
+        </div>
+      </div>
+
+      <!-- Actividad y proximas sesiones -->
+      <div class="dashboard-grid">
+        <div class="dashboard-card">
+          <h3>Actividad reciente</h3>
+          <div class="activity-item">
+            <span class="activity-dot green"></span>
+            <span class="activity-text">Asistencia registrada - Grupo A</span>
+            <span class="activity-time">Hace 2h</span>
+          </div>
+          <div class="activity-item">
+            <span class="activity-dot orange"></span>
+            <span class="activity-text">Notas actualizadas - Matematicas</span>
+            <span class="activity-time">Hace 4h</span>
+          </div>
+          <div class="activity-item">
+            <span class="activity-dot green"></span>
+            <span class="activity-text">Nuevo estudiante inscrito</span>
+            <span class="activity-time">Ayer</span>
+          </div>
+          <div class="activity-item">
+            <span class="activity-dot red"></span>
+            <span class="activity-text">3 ausencias reportadas - Grupo B</span>
+            <span class="activity-time">Ayer</span>
+          </div>
+          <div class="activity-item">
+            <span class="activity-dot green"></span>
+            <span class="activity-text">Formador asignado a Ciencias</span>
+            <span class="activity-time">Hace 2 dias</span>
+          </div>
+        </div>
+
+        <div class="dashboard-card">
+          <h3>Proximas sesiones</h3>
+          <div class="session-item">
+            <div>
+              <div class="session-name">Matematicas - Grupo A</div>
+              <div class="session-details">Prof. Garcia | 14:00 - 16:00</div>
+            </div>
+            <span class="session-badge today">Hoy</span>
+          </div>
+          <div class="session-item">
+            <div>
+              <div class="session-name">Ciencias - Grupo B</div>
+              <div class="session-details">Prof. Martinez | 10:00 - 12:00</div>
+            </div>
+            <span class="session-badge today">Hoy</span>
+          </div>
+          <div class="session-item">
+            <div>
+              <div class="session-name">Historia - Grupo A</div>
+              <div class="session-details">Prof. Lopez | 09:00 - 11:00</div>
+            </div>
+            <span class="session-badge upcoming">Manana</span>
+          </div>
+          <div class="session-item">
+            <div>
+              <div class="session-name">Literatura - Grupo C</div>
+              <div class="session-details">Prof. Torres | 14:00 - 16:00</div>
+            </div>
+            <span class="session-badge upcoming">Manana</span>
+          </div>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+</body>
+</html>

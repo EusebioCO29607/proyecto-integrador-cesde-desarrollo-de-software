@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NotApp - Estudiantes</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div class="app-layout">
+
+    <!-- ====== SIDEBAR ====== -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+          <span class="hamburger">&#9776;</span>
+          <h2 class="logo"><span class="logo-not">Not</span><span class="logo-app">App</span></h2>
+        </div>
+  
+        <nav class="sidebar-nav">
+          <a href="dashboard.html" class="active">
+            <span class="icon">&#9673;</span> Inicio
+          </a>
+          <a href="attendance.html">
+            <span class="icon">&#128203;</span> Hojas de asistencia
+          </a>
+  
+          <div class="sidebar-section-title">Contacto</div>
+          <a href="students.html">
+            <span class="icon">&#127891;</span> Estudiantes
+          </a>
+          <a href="teachers.html">
+            <span class="icon">&#128100;</span> Profesores
+          </a>
+          <a href="#">
+            <span class="icon">&#128101;</span> Grupos
+          </a>
+          <a href="#">
+            <span class="icon">&#128209;</span> Programas
+          </a>
+         
+          <div class="sidebar-section-title">Educación</div>
+          <a href="#">
+            <span class="icon">&#128202;</span> Estadísticas
+          </a>
+          <a href="notes.html">
+            <span class="icon">&#127919;</span> Notas
+          </a>
+          <a href="#">
+            <span class="icon">&#128276;</span> Alertas
+          </a>
+        </nav>
+  
+        <div class="sidebar-footer">
+          <a href="#">
+            <span class="icon">&#128276;</span> Notificaciones
+          </a>
+        </div>
+  
+        <div class="sidebar-user">
+          <div class="user-avatar">NA</div>
+          <span class="user-name">Administrador</span>
+        </div>
+      </aside>
+
+    <!-- ====== CONTENIDO PRINCIPAL ====== -->
+    <main class="main-content">
+      <div class="page-header">
+        <div>
+          <h1>Estudiantes</h1>
+          <p class="subtitle">128 estudiantes inscritos</p>
+        </div>
+        <div class="header-actions">
+          <button class="btn-primary">+ Agregar estudiante</button>
+        </div>
+      </div>
+
+      <!-- Barra de herramientas -->
+      <div class="table-toolbar">
+        <div class="search-box">
+          <span class="search-icon">&#128269;</span>
+          <input type="text" placeholder="Buscar estudiante...">
+        </div>
+        <div style="display: flex; gap: 8px;">
+          <button class="filter-btn">Todos los grupos &#9662;</button>
+          <button class="filter-btn">Estado &#9662;</button>
+        </div>
+      </div>
+
+      <!-- Tabla de estudiantes -->
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Correo electronico</th>
+            <th>Grupo</th>
+            <th>Asistencia</th>
+            <th>Estado</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="name-cell">Alejandro Garcia</td>
+            <td>alejandro.garcia@email.com</td>
+            <td><span class="badge group-a">Grupo A</span></td>
+            <td>95%</td>
+            <td><span class="badge active">Activo</span></td>
+          </tr>
+          <tr>
+            <td class="name-cell">Carlos Martinez</td>
+            <td>carlos.martinez@email.com</td>
+            <td><span class="badge group-b">Grupo B</span></td>
+            <td>88%</td>
+            <td><span class="badge active">Activo</span></td>
+          </tr>
+          <tr>
+            <td class="name-cell">Maria Lopez</td>
+            <td>maria.lopez@email.com</td>
+            <td><span class="badge group-a">Grupo A</span></td>
+            <td>92%</td>
+            <td><span class="badge active">Activo</span></td>
+          </tr>
+          <tr>
+            <td class="name-cell">Laura Torres</td>
+            <td>laura.torres@email.com</td>
+            <td><span class="badge group-a">Grupo A</span></td>
+            <td>78%</td>
+            <td><span class="badge active">Activo</span></td>
+          </tr>
+          <tr>
+            <td class="name-cell">Marta Fernandez</td>
+            <td>marta.fernandez@email.com</td>
+            <td><span class="badge group-b">Grupo B</span></td>
+            <td>65%</td>
+            <td><span class="badge inactive">Inactivo</span></td>
+          </tr>
+          <tr>
+            <td class="name-cell">Ana Sanchez</td>
+            <td>ana.sanchez@email.com</td>
+            <td><span class="badge group-a">Grupo A</span></td>
+            <td>91%</td>
+            <td><span class="badge active">Activo</span></td>
+          </tr>
+          <tr>
+            <td class="name-cell">Pedro Ramirez</td>
+            <td>pedro.ramirez@email.com</td>
+            <td><span class="badge group-b">Grupo B</span></td>
+            <td>83%</td>
+            <td><span class="badge active">Activo</span></td>
+          </tr>
+          <tr>
+            <td class="name-cell">Sofia Herrera</td>
+            <td>sofia.herrera@email.com</td>
+            <td><span class="badge group-a">Grupo A</span></td>
+            <td>97%</td>
+            <td><span class="badge active">Activo</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </main>
+  </div>
+
+</body>
+</html>

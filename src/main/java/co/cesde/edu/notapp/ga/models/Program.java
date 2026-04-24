@@ -1,19 +1,19 @@
 package co.cesde.edu.notapp.ga.models;
 
-public class Programs {
-  private long programId;
+public class Program {
+  private Long programId;
   private String name;
   private String code;
 
-  public Programs() {
+  public Program() {
 
   }
 
-  public long getProgramId() {
+  public Long getProgramId() {
     return programId;
   }
 
-  public void setProgramId(long programId) {
+  public void setProgramId(Long programId) {
     this.programId = programId;
   }
 
@@ -33,7 +33,7 @@ public class Programs {
     this.code = code;
   }
 
-  public Programs(long programId, String name, String code) {
+  public Program(Long programId, String name, String code) {
     this.programId = programId;
     this.name = name;
     this.code = code;
@@ -41,7 +41,7 @@ public class Programs {
 
   @Override
   public String toString() {
-    return "Programs{" +
+    return "Program{" +
         "programId '" + programId + '\'' +
         ", name= " + name +
         ", code= " + code +

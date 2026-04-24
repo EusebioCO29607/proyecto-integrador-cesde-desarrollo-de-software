@@ -1,20 +1,20 @@
 package co.cesde.edu.notapp.ga.models;
 
-public class Roles {
+public class Role {
 
-  private long roleId;
+  private Long roleId;
   private String name;
   private String description;
 
-  public Roles() {
+  public Role() {
 
   }
 
-  public long getRoleId() {
+  public Long getRoleId() {
     return roleId;
   }
 
-  public void setRoleId(long roleId) {
+  public void setRoleId(Long roleId) {
     this.roleId = roleId;
   }
 
@@ -34,7 +34,7 @@ public class Roles {
     this.description = description;
   }
 
-  public Roles(long roleId, String name, String description) {
+  public Role(Long roleId, String name, String description) {
     this.roleId = roleId;
     this.name = name;
     this.description = description;
@@ -42,7 +42,7 @@ public class Roles {
 
   @Override
   public String toString() {
-    return "Roles{" +
+    return "Role{" +
         "roleId= '" + roleId + '\'' +
         ", name= " + name +
         ", description= " + description +

@@ -1,22 +1,22 @@
 package co.cesde.edu.notapp.ga.models;
 
-public class Subjects {
+public class Subject {
 
-  private long subjectId;
+  private Long subjectId;
   private String code;
   private String name;
-  private int credits;
-  private long programId;
+  private Integer credits;
+  private Long programId;
 
-  public Subjects() {
+  public Subject() {
 
   }
 
-  public long getSubjectId() {
+  public Long getSubjectId() {
     return subjectId;
   }
 
-  public void setSubjectId(long subjectId) {
+  public void setSubjectId(Long subjectId) {
     this.subjectId = subjectId;
   }
 
@@ -36,23 +36,23 @@ public class Subjects {
     this.name = name;
   }
 
-  public int getCredits() {
+  public Integer getCredits() {
     return credits;
   }
 
-  public void setCredits(int credits) {
+  public void setCredits(Integer credits) {
     this.credits = credits;
   }
 
-  public long getProgramId() {
+  public Long getProgramId() {
     return programId;
   }
 
-  public void setProgramId(long programId) {
+  public void setProgramId(Long programId) {
     this.programId = programId;
   }
 
-  public Subjects(long subjectId, String code, int credits, String name, long programId) {
+  public Subject(Long subjectId, String code, Integer credits, String name, Long programId) {
     this.subjectId = subjectId;
     this.code = code;
     this.credits = credits;
@@ -62,7 +62,7 @@ public class Subjects {
 
   @Override
   public String toString() {
-    return "Subjects{" +
+    return "Subject{" +
         "SubjectId= '" + subjectId + '\'' +
         ", code= " + code +
         ", credits= " + credits +

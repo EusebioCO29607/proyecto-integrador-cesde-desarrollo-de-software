@@ -1,20 +1,20 @@
 package co.cesde.edu.notapp.ga.models;
 
-public class Teachers {
+public class Teacher {
 
-  private long teacherId;
+  private Long teacherId;
   private String firstName;
   private String lastName;
   private String code;
-  private long userId;
+  private Long userId;
   private String documentNumber;
-  private boolean status;
+  private String status;
 
-  public long getTeacherId() {
+  public Long getTeacherId() {
     return teacherId;
   }
 
-  public void setTeacherId(long teacherId) {
+  public void setTeacherId(Long teacherId) {
     this.teacherId = teacherId;
   }
 
@@ -58,15 +58,15 @@ public class Teachers {
     this.documentNumber = documentNumber;
   }
 
-  public boolean isStatus() {
+  public String getStatus() {
     return status;
   }
 
-  public void setStatus(boolean status) {
+  public void setStatus(String  status) {
     this.status = status;
   }
 
-  public Teachers(long teacherId, String firstName, String code, String lastName, long userId, String documentNumber, boolean status) {
+  public Teacher(Long teacherId, String firstName, String code, String lastName, Long userId, String documentNumber, String status) {
     this.teacherId = teacherId;
     this.firstName = firstName;
     this.code = code;
@@ -76,7 +76,7 @@ public class Teachers {
     this.status = status;
   }
 
-  public Teachers() {
+  public Teacher() {
   }
 
   @Override

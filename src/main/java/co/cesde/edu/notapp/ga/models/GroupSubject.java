@@ -1,12 +1,12 @@
 package co.cesde.edu.notapp.ga.models;
 
-public class GroupSubjects {
+public class GroupSubject {
   private long groupSubjectId;
   private long groupId;
   private long subjectId;
   private long teacherId;
 
-  public GroupSubjects() {
+  public GroupSubject() {
 
   }
 
@@ -42,7 +42,7 @@ public class GroupSubjects {
     this.teacherId = teacherId;
   }
 
-  public GroupSubjects(long groupSubjectId, long groupId, long subjectId, long teacherId) {
+  public GroupSubject(long groupSubjectId, long groupId, long subjectId, long teacherId) {
     this.groupSubjectId = groupSubjectId;
     this.groupId = groupId;
     this.subjectId = subjectId;

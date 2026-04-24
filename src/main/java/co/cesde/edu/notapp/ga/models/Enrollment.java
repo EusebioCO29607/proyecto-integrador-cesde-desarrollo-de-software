@@ -1,6 +1,6 @@
 package co.cesde.edu.notapp.ga.models;
 
-public class Enrollments {
+public class Enrollment {
   private long enrollmentId;
   private long studentId;
   private long groupId;
@@ -8,7 +8,7 @@ public class Enrollments {
   private boolean status;
   private String enrolledAt;
 
-  public Enrollments() {}
+  public Enrollment() {}
 
   public long getEnrollmentId() {
     return enrollmentId;
@@ -58,7 +58,7 @@ public class Enrollments {
     this.enrolledAt = enrolledAt;
   }
 
-  public Enrollments(long enrollmentId, long studentId, long groupId, long periodId, boolean status, String enrolledAt) {
+  public Enrollment(long enrollmentId, long studentId, long groupId, long periodId, boolean status, String enrolledAt) {
     this.enrollmentId = enrollmentId;
     this.studentId = studentId;
     this.groupId = groupId;

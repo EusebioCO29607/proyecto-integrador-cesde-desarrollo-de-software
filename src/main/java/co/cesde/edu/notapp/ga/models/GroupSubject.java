@@ -1,48 +1,48 @@
 package co.cesde.edu.notapp.ga.models;
 
 public class GroupSubject {
-  private long groupSubjectId;
-  private long groupId;
-  private long subjectId;
-  private long teacherId;
+  private Long groupSubjectId;
+  private Long groupId;
+  private Long subjectId;
+  private Long teacherId;
 
   public GroupSubject() {
 
   }
 
-  public long getGroupSubjectId() {
+  public Long getGroupSubjectId() {
     return groupSubjectId;
   }
 
-  public void setGroupSubjectId(long groupSubjectId) {
+  public void setGroupSubjectId(Long groupSubjectId) {
     this.groupSubjectId = groupSubjectId;
   }
 
-  public long getGroupId() {
+  public Long getGroupId() {
     return groupId;
   }
 
-  public void setGroupId(long groupId) {
+  public void setGroupId(Long groupId) {
     this.groupId = groupId;
   }
 
-  public long getSubjectId() {
+  public Long getSubjectId() {
     return subjectId;
   }
 
-  public void setSubjectId(long subjectId) {
+  public void setSubjectId(Long subjectId) {
     this.subjectId = subjectId;
   }
 
-  public long getTeacherId() {
+  public Long getTeacherId() {
     return teacherId;
   }
 
-  public void setTeacherId(long teacherId) {
+  public void setTeacherId(Long teacherId) {
     this.teacherId = teacherId;
   }
 
-  public GroupSubject(long groupSubjectId, long groupId, long subjectId, long teacherId) {
+  public GroupSubject(Long groupSubjectId, Long groupId, Long subjectId, Long teacherId) {
     this.groupSubjectId = groupSubjectId;
     this.groupId = groupId;
     this.subjectId = subjectId;
@@ -51,7 +51,7 @@ public class GroupSubject {
 
   @Override
   public String toString() {
-    return "GroupSubjects{" +
+    return "GroupSubject{" +
         "groupSubjectId= '" + groupSubjectId + '\'' +
         ", groupId= " + groupId +
         ", subjectId= " + subjectId +

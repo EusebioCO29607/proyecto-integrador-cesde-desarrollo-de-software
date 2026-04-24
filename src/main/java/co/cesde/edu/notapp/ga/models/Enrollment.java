@@ -1,24 +1,24 @@
 package co.cesde.edu.notapp.ga.models;
 
 public class Enrollment {
-  private long enrollmentId;
-  private long studentId;
-  private long groupId;
-  private long periodId;
-  private boolean status;
+  private Long enrollmentId;
+  private Long studentId;
+  private Long groupId;
+  private Long periodId;
+  private String status;
   private String enrolledAt;
 
   public Enrollment() {}
 
-  public long getEnrollmentId() {
+  public Long getEnrollmentId() {
     return enrollmentId;
   }
 
-  public void setEnrollmentId(long enrollmentId) {
+  public void setEnrollmentId(Long enrollmentId) {
     this.enrollmentId = enrollmentId;
   }
 
-  public long getStudentId() {
+  public Long getStudentId() {
     return studentId;
   }
 
@@ -26,27 +26,27 @@ public class Enrollment {
     this.studentId = studentId;
   }
 
-  public long getGroupId() {
+  public Long getGroupId() {
     return groupId;
   }
 
-  public void setGroupId(long groupId) {
+  public void setGroupId(Long groupId) {
     this.groupId = groupId;
   }
 
-  public long getPeriodId() {
+  public Long getPeriodId() {
     return periodId;
   }
 
-  public void setPeriodId(long periodId) {
+  public void setPeriodId(Long periodId) {
     this.periodId = periodId;
   }
 
-  public boolean isStatus() {
+  public String getStatus() {
     return status;
   }
 
-  public void setStatus(boolean status) {
+  public void setStatus(String status) {
     this.status = status;
   }
 
@@ -58,7 +58,7 @@ public class Enrollment {
     this.enrolledAt = enrolledAt;
   }
 
-  public Enrollment(long enrollmentId, long studentId, long groupId, long periodId, boolean status, String enrolledAt) {
+  public Enrollment(Long enrollmentId, Long studentId, Long groupId, Long periodId, String status, String enrolledAt) {
     this.enrollmentId = enrollmentId;
     this.studentId = studentId;
     this.groupId = groupId;
@@ -69,7 +69,7 @@ public class Enrollment {
 
   @Override
   public String toString() {
-    return "Enrollments{" +
+    return "Enrollment{" +
         "enrollmentId= '" + enrollmentId + '\'' +
         ", studentId= " + studentId +
         ", groupId= " + groupId +

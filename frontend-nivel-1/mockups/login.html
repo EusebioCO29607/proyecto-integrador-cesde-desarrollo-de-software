@@ -16,7 +16,12 @@
         <p>Sistema de Gestión Académica</p>
       </div>
 
-      <form id="loginForm" action="dashboard.html">
+      <div id="loginError" class="error-msg">
+        Correo o contraseña incorrectos. Intente de nuevo.
+      </div>
+
+      <!--<form id="loginForm" action="dashboard.html">-->
+      <form id="loginForm">
         <div class="form-group">
           <label for="email">Correo electrónico</label>
           <input
@@ -50,6 +55,6 @@
 
     </div>
   </div>
-
+  <script src="../inicio-sesion/login.js"></script>
 </body>
 </html>

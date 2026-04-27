@@ -10,7 +10,6 @@
 
   <div class="app-layout">
 
-    <!-- ====== SIDEBAR ====== -->
     <aside class="sidebar">
         <div class="sidebar-header">
           <span class="hamburger">&#9776;</span>
@@ -38,7 +37,7 @@
           <a href="#">
               <span class="icon">&#128209;</span> Programas
           </a>
-         
+          
           <div class="sidebar-section-title">Educación</div>
           <a href="#">
             <span class="icon">&#128202;</span> Estadísticas
@@ -46,6 +45,7 @@
           <a href="notes.html">
             <span class="icon">&#127919;</span> Notas
           </a>
+        
           <a href="#">
             <span class="icon">&#128276;</span> Alertas
           </a>
@@ -61,10 +61,29 @@
           <div class="user-avatar">NA</div>
           <span class="user-name">Administrador</span>
         </div>
-      </aside>
+    </aside>
+
+    <div class="main-content" style="flex: 1; padding: 20px;">
+        
+        <section id="seccion-gestion-usuarios">
+            <h3>Registro de Nuevo Usuario</h3>
+            <form id="form-usuarios">
+           <input type="text" id="input-nombre" placeholder="Nombre completo">
+
+    <select id="selec-rol" name="rol">
+        <option value="" disabled selected>Seleccione un rol...</option>
+        <option value="Estudiante">Estudiante</option>
+        <option value="Profesor">Profesor</option>
+    </select>
+
+    <button type="submit">Agregar Usuario</button>
+</form>
+              </section>
+
+        <section style="margin-top: 30px;">
+            <h3>Usuarios Registrados</h3>
+            <div id="contenedor-lista"></div> </section>
   
-    <!-- ====== CONTENIDO PRINCIPAL ====== -->
-    <main class="main-content">
       <div class="page-header">
         <div>
           <h1>Registro de Notas</h1>
@@ -76,7 +95,6 @@
         </div>
       </div>
 
-      <!-- Barra de herramientas -->
       <div class="table-toolbar">
         <div class="search-box">
           <span class="search-icon">&#128269;</span>
@@ -85,7 +103,6 @@
         <button class="btn-primary">Exportar notas</button>
       </div>
 
-      <!-- Tabla de notas -->
       <table class="data-table">
         <thead>
           <tr>
@@ -164,8 +181,6 @@
           </tr>
         </tbody>
       </table>
-    </main>
-  </div>
-
+    </div> </div> <script src="Usuario.js"></script>
 </body>
 </html>

@@ -8,6 +8,8 @@ public interface TeacherService {
 
   List<Teacher> findAll();
 
+  Teacher getTeacher(Long teacherId);
+
   Teacher create(Teacher teacher);
 
   Teacher findByDocumentNumber(String documentNumber);

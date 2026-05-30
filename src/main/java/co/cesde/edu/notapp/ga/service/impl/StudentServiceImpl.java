@@ -1,5 +1,6 @@
 package co.cesde.edu.notapp.ga.service.impl;
 
+import co.cesde.edu.notapp.ga.exceptions.StudentNotFoundException;
 import co.cesde.edu.notapp.ga.models.Student;
 import co.cesde.edu.notapp.ga.repository.StudentRepository;
 import co.cesde.edu.notapp.ga.service.StudentService;
@@ -11,6 +12,16 @@ public class StudentServiceImpl implements StudentService {
 
   public StudentServiceImpl(StudentRepository studentRepository) {
     this.studentRepository = studentRepository;
+  }
+
+  @Override
+  public Student getStudent(Long studentId){
+    for (Student student : studentRepository.findAll()) {
+      if (student.getStudentId() == studentId) {
+        return student;
+      }
+    }
+    throw new StudentNotFoundException(studentId);
   }
 
   @Override

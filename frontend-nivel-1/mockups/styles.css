@@ -287,6 +287,14 @@ input {
   min-height: 100vh;
 }
 
+/*Contenido de users*/
+.main-content-users {
+  flex: 1;
+  padding: 28px 36px;
+  background-color: #ffffff;
+  min-height: 100vh;
+}
+
 /* ========================================
    HEADER DE PAGINA
    ======================================== */

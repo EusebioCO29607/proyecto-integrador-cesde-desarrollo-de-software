@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "nombre": "Sergio Lopez",
+    "email": "sergio@notapp.com",
+    "password": "1111",
+    "rol": "admin"
+  },
+  {
+    "id": 2,
+    "nombre": "Maria Garcia",
+    "email": "maria@notapp.com",
+    "password": "2222",
+    "rol": "estudiante"
+  },
+  {
+    "id": 3,
+    "nombre": "Carlos Perez",
+    "email": "carlos@notapp.com",
+    "password": "3333",
+    "rol": "profesor"
+  }
+]

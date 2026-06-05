@@ -1,0 +1,233 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'IBM Plex Sans', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f7f7f7;
+  color: #111111;
+  line-height: 1.5;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ========================================
+   LOGO
+   ======================================== */
+.logo {
+  font-family: 'IBM Plex Mono', monospace;
+  font-weight: bold;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+}
+
+.logo-not {
+  background-color: black;
+  color: white;
+  padding: 4px 6px;
+  border-radius: 4px;
+}
+
+.logo-app {
+  color: black;
+  padding: 4px 2px;
+}
+
+/* ========================================
+   LANDING PAGE
+   ======================================== */
+.landing-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.landing-header nav {
+  display: flex;
+  gap: 20px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.landing-header nav a:hover {
+  text-decoration: underline;
+}
+
+.landing-hero {
+  text-align: center;
+  padding: 80px 40px;
+  background-color: #111111;
+  color: #ffffff;
+}
+
+.landing-hero h2 {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.landing-hero p {
+  font-size: 16px;
+  color: #aaaaaa;
+  margin-bottom: 32px;
+}
+
+.btn-hero {
+  display: inline-block;
+  padding: 12px 32px;
+  background-color: #ffffff;
+  color: #111111;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 8px;
+}
+
+.btn-hero:hover {
+  background-color: #dddddd;
+}
+
+.landing-users {
+  padding: 40px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.landing-users h3 {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.landing-users p {
+  color: #777777;
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
+#listaUsuarios li {
+  padding: 12px 16px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  background-color: #ffffff;
+  font-size: 14px;
+}
+
+/* ========================================
+   LOGIN
+   ======================================== */
+.login-wrapper {
+  display: flex;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  background-color: #f0f0f0;
+}
+
+.login-card {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+  padding: 48px 40px;
+  width: 100%;
+  max-width: 420px;
+}
+
+.login-logo {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.login-logo h1 {
+  display: inline-flex;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.login-logo p {
+  color: #111111;
+  font-size: 14px;
+  margin-top: 8px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  color: #111111;
+  margin-bottom: 6px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid #d4d4d4;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #111111;
+  background-color: #ffffff;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #333333;
+}
+
+.login-btn {
+  width: 100%;
+  padding: 12px;
+  background-color: #111111;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  margin-top: 8px;
+}
+
+.login-btn:hover {
+  background-color: #333333;
+}
+
+.login-footer {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 13px;
+  color: #777777;
+}
+
+.login-footer a {
+  color: #111111;
+  font-weight: 500;
+}
+
+.error-msg {
+  background: #fff0f0;
+  border: 1px solid #ffcccc;
+  color: #cc0000;
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 13px;
+  margin-bottom: 16px;
+  display: none;
+}
+
+.error-msg.visible {
+  display: block;
+}

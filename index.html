@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NotApp - Inicio</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Encabezado -->
+  <header class="landing-header">
+    <h1 class="logo"><span class="logo-not">Not</span><span class="logo-app">App</span></h1>
+    <nav>
+      <a href="login.html">Iniciar sesión</a>
+      <a href="registro.html">Registrarse</a>
+    </nav>
+  </header>
+
+  <!-- Seccion principal -->
+  <section class="landing-hero">
+    <h2>Sistema de Gestión Académica</h2>
+    <p>Administra estudiantes, profesores y notas en un solo lugar.</p>
+    <a href="login.html" class="btn-hero">Comenzar</a>
+  </section>
+
+  <!-- Seccion de usuarios cargados desde JSON -->
+  <section class="landing-users">
+    <h3>Usuarios registrados</h3>
+    <p>Cargando usuarios...</p>
+    <ul id="listaUsuarios"></ul>
+  </section>
+
+  <script src="app.js"></script>
+</body>
+</html>

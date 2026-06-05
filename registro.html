@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NotApp - Registro</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div class="login-wrapper">
+    <div class="login-card">
+
+      <div class="login-logo">
+        <h1 class="logo"><span class="logo-not">Not</span><span class="logo-app">App</span></h1>
+        <p>Crear nueva cuenta</p>
+      </div>
+
+      <div id="registroError" class="error-msg">
+        Por favor complete todos los campos.
+      </div>
+
+      <div id="registroExito" class="error-msg" style="background:#f0fff0; border-color:#aaddaa; color:#228822; display:none;">
+        Usuario registrado correctamente.
+      </div>
+
+      <form id="registroForm">
+        <div class="form-group">
+          <label for="nombre">Nombre completo</label>
+          <input type="text" id="nombre" placeholder="Nombre y apellido" required>
+        </div>
+
+        <div class="form-group">
+          <label for="emailReg">Correo electrónico</label>
+          <input type="email" id="emailReg" placeholder="usuario@notapp.com" required>
+        </div>
+
+        <div class="form-group">
+          <label for="passwordReg">Contraseña</label>
+          <input type="password" id="passwordReg" placeholder="Cree una contraseña" required>
+        </div>
+
+        <button type="submit" class="login-btn">Registrarse</button>
+      </form>
+
+      <div class="login-footer">
+        <p>¿Ya tienes cuenta? <a href="login.html">Iniciar sesión</a></p>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

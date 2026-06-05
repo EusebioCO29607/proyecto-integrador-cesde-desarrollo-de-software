@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NotApp - Iniciar Sesión</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div class="login-wrapper">
+    <div class="login-card">
+
+      <div class="login-logo">
+        <h1 class="logo"><span class="logo-not">Not</span><span class="logo-app">App</span></h1>
+        <p>Sistema de Gestión Académica</p>
+      </div>
+
+      <div id="loginError" class="error-msg">
+        Correo o contraseña incorrectos. Intente de nuevo.
+      </div>
+
+      <form id="loginForm">
+        <div class="form-group">
+          <label for="email">Correo electrónico</label>
+          <input type="email" id="email" name="email" placeholder="usuario@notapp.com" required>
+        </div>
+
+        <div class="form-group">
+          <label for="password">Contraseña</label>
+          <input type="password" id="password" name="password" placeholder="Ingrese su contraseña" required>
+        </div>
+
+        <button type="submit" class="login-btn">Iniciar Sesión</button>
+      </form>
+
+      <div class="login-footer">
+        <p>¿No tienes cuenta? <a href="registro.html">Regístrate</a></p>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

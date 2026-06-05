@@ -12,15 +12,12 @@
     <div class="login-card">
 
       <div class="login-logo">
-      <h1 class="logo"><span class="logo-not">Not</span><span class="logo-app">App</span></h1>
+        <h1 class="logo"><span class="logo-not">Not</span><span class="logo-app">App</span></h1>
         <p>Sistema de Gestión Académica</p>
       </div>
 
-      <div id="loginError" class="error-msg">
-        Correo o contraseña incorrectos. Intente de nuevo.
-      </div>
+      <div id="loginError" class="error-msg" style="display:none;"></div>
 
-      <!--<form id="loginForm" action="dashboard.html">-->
       <form id="loginForm">
         <div class="form-group">
           <label for="email">Correo electrónico</label>
@@ -39,22 +36,34 @@
             type="password"
             id="password"
             name="password"
-            placeholder="Ingrese su contrasena"
+            placeholder="Ingrese su contraseña"
             required
           >
+        </div>
+
+        <div class="form-group">
+          <label for="role">Tipo de rol</label>
+          <select id="role" name="role">
+            <option value="">-- Seleccione su rol --</option>
+            <option value="admin">Administrador</option>
+            <option value="teacher">Formador</option>
+            <option value="student">Estudiante</option>
+          </select>
         </div>
 
         <button type="submit" class="login-btn">Iniciar Sesión</button>
       </form>
 
       <div class="login-footer">
-        <p>
-          <a href="#">Olvidé mi contraseña</a>
+        <p><a href="#">Olvidé mi contraseña</a></p>
+        <p style="margin-top: 8px;">
+          ¿No tienes cuenta? <a href="register.html">Crear cuenta</a>
         </p>
       </div>
 
     </div>
   </div>
-  <script src="../inicio-sesion/login.js"></script>
+
+  <script src="/frontend-nivel-1/inicio-sesion/login.js"></script>
 </body>
 </html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NotApp - Usuarios registrados</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div class="app-layout">
+    
+
+    <main class="main-content-users">
+      <div class="page-header">
+        <div>
+          <h1>Usuarios registrados</h1>
+          <p class="subtitle">Listado de cuentas activas en el sistema</p>
+        </div>
+      </div>
+
+      <div class="table-toolbar">
+        <div class="search-box">
+          <span class="search-icon">🔍</span>
+          <input type="text" id="searchInput" placeholder="Buscar por nombre o correo…">
+        </div>
+      </div>
+
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Nombre</th>
+            <th>Correo</th>
+            <th>Rol</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody id="usersBody"></tbody>
+      </table>
+
+      <div id="emptyUsers" class="empty-state" style="display:none;">
+        <div class="empty-icon">👤</div>
+        <p>No se encontraron usuarios</p>
+      </div>
+
+    </main>
+  </div>
+
+  <!--<script src="app.js"></script>-->
+  <script src="/frontend-nivel-1/inicio-sesion/users.js"></script>
+</body>
+</html>

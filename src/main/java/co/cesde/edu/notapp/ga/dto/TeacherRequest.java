@@ -1,7 +1,5 @@
 package co.cesde.edu.notapp.ga.dto;
 
-
-
 public class TeacherRequest {
 
     private String firstName;

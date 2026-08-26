@@ -14,4 +14,6 @@ public interface StudentService {
   Student findByDocumentNumber(String documentNumber);
 
   List<Student> findAll();
+
+  Student getStudent(Long studentId);
 }

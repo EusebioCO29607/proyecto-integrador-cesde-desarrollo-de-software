@@ -1,5 +1,6 @@
 package co.cesde.edu.notapp.ga.service.impl;
 
+import co.cesde.edu.notapp.ga.exceptions.TeacherNotFoundException;
 import co.cesde.edu.notapp.ga.models.Teacher;
 import co.cesde.edu.notapp.ga.repository.TeacherRepository;
 import co.cesde.edu.notapp.ga.service.TeacherService;
@@ -12,6 +13,16 @@ public class TeacherServiceImpl implements TeacherService {
 
   public TeacherServiceImpl(TeacherRepository teachersRepository) {
     this.teachersRepository = teachersRepository;
+  }
+
+  @Override
+  public Teacher getTeacher(Long teacherId) {
+    for (Teacher teacher : teachersRepository.findAll()) {
+      if (teacher.getTeacherId().equals(teacherId)) {
+        return teacher;
+      }
+    }
+    throw new TeacherNotFoundException(teacherId);
   }
 
   @Override

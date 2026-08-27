@@ -1,6 +1,5 @@
 package co.cesde.aulabot.application.Exceptions;
 
-
 public class ProgramNotFoundException extends RuntimeException {
     public ProgramNotFoundException(String message) {
         super(message);

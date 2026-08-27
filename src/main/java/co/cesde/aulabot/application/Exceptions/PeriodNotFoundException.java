@@ -1,7 +1,5 @@
 package co.cesde.aulabot.application.Exceptions;
 
-
-
 public class PeriodNotFoundException extends RuntimeException {
     public PeriodNotFoundException(String message) {
         super(message);

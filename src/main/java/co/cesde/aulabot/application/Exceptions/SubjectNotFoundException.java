@@ -1,6 +1,5 @@
 package co.cesde.aulabot.application.Exceptions;
 
-
 public class SubjectNotFoundException extends RuntimeException {
     public SubjectNotFoundException(String message) {
         super(message);

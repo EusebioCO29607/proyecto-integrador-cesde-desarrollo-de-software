@@ -1,7 +1,5 @@
 package co.cesde.aulabot.application.Exceptions;
 
-
-
 public class GroupSubjectNotFoundException extends RuntimeException {
     public GroupSubjectNotFoundException(String message) {
         super(message);

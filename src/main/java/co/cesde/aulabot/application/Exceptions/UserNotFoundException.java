@@ -1,6 +1,5 @@
 package co.cesde.aulabot.application.Exceptions;
 
-
 public class UserNotFoundException extends RuntimeException {
     public UserNotFoundException(String message) {
         super(message);

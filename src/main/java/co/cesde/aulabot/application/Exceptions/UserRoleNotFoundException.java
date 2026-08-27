@@ -1,6 +1,5 @@
 package co.cesde.aulabot.application.Exceptions;
 
-
 public class UserRoleNotFoundException extends RuntimeException {
     public UserRoleNotFoundException(String message) {
         super(message);

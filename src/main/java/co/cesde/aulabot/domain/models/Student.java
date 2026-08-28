@@ -1,13 +1,33 @@
 package co.cesde.aulabot.domain.models;
 
+@Entity
+@Table(name = "students")
 public class Student {
+
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  @Column(name = "student_id")
   private Long studentId;
+
+  @Column(name = "first_name", nullable = false, length = 100)
   private String firstName;
+
+  @Column(name = "last_name", nullable = false, length = 100)
   private String lastName;
+
+  @Column(name = "code", unique = true, length = 50)
   private String code;
+
+  @Column(name = "user_id")
   private Long userId;
+
+  @Column(name = "document_number", unique = true, nullable = false, length = 20)
   private String documentNumber;
+
+  @Column(name = "status", length = 20)
   private String status;
+
+  @Column(name = "birth_date")
   private String birthDate;
 
   public Student() {
@@ -91,18 +111,15 @@ public class Student {
   @Override
   public String toString() {
     return "Student{" +
-        "studentId='" + studentId + '\'' +
-        ", userId=" + userId +
-        ", code=" + code +
-        ", documentNumber=" + documentNumber +
-        ", firstName=" + firstName +
-        ", lastName=" + lastName +
-        ", birthDate=" + birthDate +
-        ", status=" + status +
-        '}';
+            "studentId='" + studentId + '\'' +
+            ", userId=" + userId +
+            ", code=" + code +
+            ", documentNumber=" + documentNumber +
+            ", firstName=" + firstName +
+            ", lastName=" + lastName +
+            ", birthDate=" + birthDate +
+            ", status=" + status +
+            '}';
   }
-
 }
-
-
 

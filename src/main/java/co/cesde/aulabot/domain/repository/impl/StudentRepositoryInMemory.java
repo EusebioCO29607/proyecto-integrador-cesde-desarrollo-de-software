@@ -5,6 +5,7 @@ import co.cesde.aulabot.domain.repository.StudentRepository;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 public class StudentRepositoryInMemory implements StudentRepository {
   private List<Student> students;
@@ -13,6 +14,22 @@ public class StudentRepositoryInMemory implements StudentRepository {
   public StudentRepositoryInMemory() {
     this.students = new ArrayList<>();
     this.nextStudentId = 1L;
+  }
+
+  @Override
+  public Student save(Student student) {
+    if (student == null) {
+      throw new IllegalArgumentException("Student cannot be null");
+    }
+    if (student.getStudentId() != null && findById(student.getStudentId()) != null) {
+      throw new RuntimeException("Student with id " + student.getStudentId() + " already exists");
+    }
+    if (existsByDocumentNumber(student.getDocumentNumber())) {
+      throw new RuntimeException("Student with document number " + student.getDocumentNumber() + " already exists");
+    }
+    student.setStudentId(nextStudentId++);
+    students.add(student);
+    return student;
   }
 
   @Override
@@ -26,34 +43,28 @@ public class StudentRepositoryInMemory implements StudentRepository {
   }
 
   @Override
-  public boolean delete(Long studentId) {
-    if (studentId == null) {
-      return false;
-    }
+  public void delete(Long studentId) {
     Student student = findById(studentId);
-    if (student == null) {
-      return false;
-    }
-    return students.remove(student);
+    students.remove(student);
   }
 
   @Override
-  public boolean update(Student studentUpdate) {
+  public Optional<Student> update(Student studentUpdate) {
     if (studentUpdate == null || studentUpdate.getStudentId() == null) {
-      return false;
+      return Optional.empty();
     }
     for (Student student : students) {
       if (!student.getStudentId().equals(studentUpdate.getStudentId()) && student.getDocumentNumber().equals(studentUpdate.getDocumentNumber())) {
-        return false;
+        return Optional.empty();
       }
     }
     for (int i = 0; i < students.size(); i++) {
       if (students.get(i).getStudentId().equals(studentUpdate.getStudentId())) {
         students.set(i, studentUpdate);
-        return true;
+        return Optional.of(studentUpdate);
       }
     }
-    return false;
+    return Optional.empty();
   }
   @Override
   public Student findById(Long studentId) {
@@ -88,6 +99,16 @@ public class StudentRepositoryInMemory implements StudentRepository {
   @Override
   public boolean existsByDocumentNumber(String documentNumber) {
     return findByDocumentNumber(documentNumber) != null;
+  }
+
+  @Override
+  public boolean existsByStudentId(Long studentId) {
+    return false;
+  }
+
+  @Override
+  public Optional<Student> findByStudentId(Long studentId) {
+    return Optional.empty();
   }
 
 }

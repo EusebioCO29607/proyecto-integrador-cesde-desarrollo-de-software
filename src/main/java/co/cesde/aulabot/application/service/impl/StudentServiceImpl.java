@@ -6,6 +6,7 @@ import co.cesde.aulabot.domain.repository.StudentRepository;
 import co.cesde.aulabot.application.service.StudentService;
 
 import java.util.List;
+import java.util.Optional;
 
 public class StudentServiceImpl implements StudentService {
   private final StudentRepository studentRepository;
@@ -15,51 +16,45 @@ public class StudentServiceImpl implements StudentService {
   }
 
   @Override
-  public Student getStudent(Long studentId){
-    for (Student student : studentRepository.findAll()) {
-      if (student.getStudentId() == studentId) {
-        return student;
-      }
-    }
-    throw new StudentNotFoundException(studentId);
-  }
-
-  @Override
-  public Student create(Student student) {
+  public Student save(Student student) {
     if (isInvalidStudent(student) || studentRepository.existsByDocumentNumber(student.getDocumentNumber())) {
       return null;
     }
-    return studentRepository.create(student);
+    return studentRepository.save(student);
   }
 
   @Override
-  public boolean update(Student studentUpdate) {
+  public Optional<Student> update(Student studentUpdate) {
     if (studentUpdate == null || studentUpdate.getStudentId() == null) {
-      return false;
+      throw  new StudentNotFoundException(studentUpdate.getStudentId());
     }
     if (isInvalidStudent(studentUpdate)) {
-      return false;
+      throw  new StudentNotFoundException(studentUpdate.getStudentId());
     }
     Student student = studentRepository.findById(studentUpdate.getStudentId());
     if (student == null) {
-      return false;
+      throw  new StudentNotFoundException(studentUpdate.getStudentId());
     }
     if (!student.getDocumentNumber().equals(studentUpdate.getDocumentNumber()) && studentRepository.existsByDocumentNumber(studentUpdate.getDocumentNumber())) {
-      return false;
+      throw  new StudentNotFoundException(studentUpdate.getStudentId());
     }
     return studentRepository.update(studentUpdate);
   }
 
   @Override
-  public boolean delete(Long studentId) {
-    if (studentId == null) {
-      return false;
+  public void delete(Long studentId) {
+    if (studentRepository.existsByStudentId(studentId)) {
+      throw new StudentNotFoundException("Not student found" + studentId);
     }
-    Student student = studentRepository.findById(studentId);
-    if (student == null) {
-      return false;
+    studentRepository.existsByStudentId(studentId);
+  }
+
+  @Override
+  public Optional<Student> findByStudentId(Long studentId) {
+    if (studentRepository.findByStudentId(studentId).isEmpty()) {
+      throw new StudentNotFoundException("Not student found" + studentId);
     }
-    return false;
+    return studentRepository.findByStudentId(studentId);
   }
 
   @Override
@@ -73,6 +68,14 @@ public class StudentServiceImpl implements StudentService {
   @Override
   public List<Student> findAll() {
     return studentRepository.findAll();
+  }
+
+  @Override
+  public boolean existsByStudentId(Long studentId) {
+    if (studentRepository.findByStudentId(studentId).isEmpty()) {
+      throw new StudentNotFoundException("Not student found" + studentId);
+    }
+    return studentRepository.existsByStudentId(studentId);
   }
 
   private boolean isInvalidStudent(Student student) {

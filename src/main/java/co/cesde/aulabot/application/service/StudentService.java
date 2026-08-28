@@ -3,17 +3,21 @@ package co.cesde.aulabot.application.service;
 import co.cesde.aulabot.domain.models.Student;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface StudentService {
-  Student create(Student student);
+  Student save(Student student);
 
-  boolean update(Student studentUpdate);
+  Optional<Student> update(Student studentUpdate);
 
-  boolean delete(Long StudentId);
+  void delete(Long StudentId);
 
-  Student findByDocumentNumber(String documentNumber);
+  Optional<Student> findByStudentId(Long studentId);
 
   List<Student> findAll();
 
-  Student getStudent(Long studentId);
+  boolean existsByStudentId(Long studentId);
+
+  Student findByDocumentNumber(String documentNumber);
+
 }

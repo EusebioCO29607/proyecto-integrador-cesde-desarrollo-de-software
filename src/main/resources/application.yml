@@ -1,0 +1,16 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/dbfinalproject?serverTimezone=UTC&useSSL=false&allowPublicKeyRetrieval=true
+    username: aulabot_admin
+    password: 123*Aulabot
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    open-in-view: false
+
+    show-sql: true
+
+  properties:
+    hibernate:
+      format-sql: true

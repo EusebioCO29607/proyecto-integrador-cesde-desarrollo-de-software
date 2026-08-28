@@ -1,19 +1,59 @@
 package co.cesde.aulabot.domain.models;
 
+import jakarta.persistence.*;
+
+@Entity
+@Table (name = "students")
+
 public class Student {
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long studentId;
+  @Column (
+      nullable = false,
+      name = "first_name",
+      length = 100
+  )
   private String firstName;
+  @Column (
+      nullable = false,
+      name = "last_name",
+      length = 100
+  )
   private String lastName;
+  @Column (
+      nullable = false,
+      length = 20
+  )
   private String code;
+  @Column (
+      name = "user_id"
+  )
   private Long userId;
+  @Column (
+      name = "document_number",
+      length = 20
+  )
   private String documentNumber;
+  @Column (
+      name = "status",
+      length = 20
+  )
   private String status;
+  @Column (
+      name = "birth_date"
+  )
   private String birthDate;
+  @Column (
+      name = "email",
+      length = 50
+  )
+  private String email;
 
   public Student() {
   }
 
-  public Student(Long studentId, Long userId, String code, String documentNumber, String firstName, String lastName, String birthDate, String status) {
+  public Student(Long studentId, Long userId, String code, String documentNumber, String firstName, String lastName, String birthDate, String status, String email) {
     this.studentId = studentId;
     this.userId = userId;
     this.code = code;
@@ -22,6 +62,7 @@ public class Student {
     this.lastName = lastName;
     this.birthDate = birthDate;
     this.status = status;
+    this.email = email;
   }
 
   public Long getStudentId() {
@@ -88,6 +129,10 @@ public class Student {
     this.status = status;
   }
 
+  public String getEmail() {return email;}
+
+  public void setEmail(String email) {this.email = email;}
+
   @Override
   public String toString() {
     return "Student{" +
@@ -99,6 +144,7 @@ public class Student {
         ", lastName=" + lastName +
         ", birthDate=" + birthDate +
         ", status=" + status +
+        ", email=" + email +
         '}';
   }
 

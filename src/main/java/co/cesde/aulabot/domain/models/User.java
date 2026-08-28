@@ -1,11 +1,38 @@
 package co.cesde.aulabot.domain.models;
 
+import jakarta.persistence.*;
+
+@Entity
+@Table (name = "users")
+
 public class User {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long userId;
+    @Column (
+            nullable = false,
+            length = 50
+    )
     private String username;
+    @Column (
+            nullable = false,
+            length = 50
+    )
     private String email;
+    @Column (
+            nullable = false,
+            name = "password_hash",
+            length = 255
+    )
     private String passwordHash;
+    @Column (
+            name = "status",
+            length = 20
+    )
     private String status;
+    @Column (
+            name = "created_at"
+    )
     private String createdAt;
 
     public User() {

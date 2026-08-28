@@ -1,10 +1,31 @@
 package co.cesde.aulabot.domain.models;
 
+import jakarta.persistence.*;
+
+@Entity
+@Table (name = "groups")
+
 public class Group {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long groupId;
+    @Column (
+            nullable = false,
+            length = 20
+    )
     private String code;
+    @Column (
+            name = "program_id"
+    )
     private Long programId;
+    @Column (
+            name = "period_id"
+    )
     private Long periodId;
+    @Column (
+            name = "shift",
+            length = 20
+    )
     private String shift;
 
     public Group() {

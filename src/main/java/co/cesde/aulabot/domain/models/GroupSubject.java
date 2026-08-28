@@ -1,9 +1,25 @@
 package co.cesde.aulabot.domain.models;
 
+import jakarta.persistence.*;
+
+@Entity
+@Table (name = "group_subjects")
+
 public class GroupSubject {
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long groupSubjectId;
+  @Column (
+          name = "group_id"
+  )
   private Long groupId;
+  @Column (
+          name = "subject_id"
+  )
   private Long subjectId;
+  @Column (
+          name = "teacher_id"
+  )
   private Long teacherId;
 
   public GroupSubject() {
@@ -52,11 +68,11 @@ public class GroupSubject {
   @Override
   public String toString() {
     return "GroupSubject{" +
-        "groupSubjectId= '" + groupSubjectId + '\'' +
-        ", groupId= " + groupId +
-        ", subjectId= " + subjectId +
-        ", teacherId= " + teacherId +
-        '}';
+            "groupSubjectId= '" + groupSubjectId + '\'' +
+            ", groupId= " + groupId +
+            ", subjectId= " + subjectId +
+            ", teacherId= " + teacherId +
+            '}';
   }
 
 }

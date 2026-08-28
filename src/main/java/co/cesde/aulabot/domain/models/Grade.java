@@ -1,10 +1,30 @@
 package co.cesde.aulabot.domain.models;
 
+import jakarta.persistence.*;
+
+@Entity
+@Table (name = "grades")
+
 public class Grade {
+
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long gradeId;
+  @Column (
+          name = "group_subject_id"
+  )
   private Long groupSubjectId;
+  @Column (
+          name = "student_id"
+  )
   private Long studentId;
+  @Column (
+          name = "final_score"
+  )
   private Double finalScore;
+  @Column (
+          name = "observation"
+  )
   private String observation;
 
   public Grade() {
@@ -61,12 +81,12 @@ public class Grade {
   @Override
   public String toString() {
     return "Grade{" +
-        "gradeId= '" + gradeId + '\'' +
-        ", groupSubjectId= " + groupSubjectId +
-        ", studentId= " + studentId +
-        ", finalScore= " + finalScore +
-        ", observation= " + observation +
-        '}';
+            "gradeId= '" + gradeId + '\'' +
+            ", groupSubjectId= " + groupSubjectId +
+            ", studentId= " + studentId +
+            ", finalScore= " + finalScore +
+            ", observation= " + observation +
+            '}';
   }
 
 }

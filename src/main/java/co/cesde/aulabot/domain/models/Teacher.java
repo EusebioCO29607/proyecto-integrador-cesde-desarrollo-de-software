@@ -1,13 +1,45 @@
 package co.cesde.aulabot.domain.models;
 
+import jakarta.persistence.*;
+
+@Entity
+@Table (name = "teachers")
+
 public class Teacher {
 
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long teacherId;
+  @Column (
+          nullable = false,
+          name = "first_name",
+          length = 100
+  )
   private String firstName;
+  @Column (
+          nullable = false,
+          name = "last_name",
+          length = 100
+  )
   private String lastName;
+  @Column (
+          nullable = false,
+          length = 20
+  )
   private String code;
+  @Column (
+          name = "user_id"
+  )
   private Long userId;
+  @Column (
+          name = "document_number",
+          length = 20
+  )
   private String documentNumber;
+  @Column (
+          name = "status",
+          length = 20
+  )
   private String status;
 
   public Long getTeacherId() {
@@ -82,14 +114,14 @@ public class Teacher {
   @Override
   public String toString() {
     return "Teachers{" +
-        "teacherId= '" + teacherId + '\'' +
-        ", userId= " + userId +
-        ", code= " + code +
-        ", documentNumber= " + documentNumber +
-        ", firstName= " + firstName +
-        ", lastName= " + lastName +
-        ", status= " + status +
-        '}';
+            "teacherId= '" + teacherId + '\'' +
+            ", userId= " + userId +
+            ", code= " + code +
+            ", documentNumber= " + documentNumber +
+            ", firstName= " + firstName +
+            ", lastName= " + lastName +
+            ", status= " + status +
+            '}';
   }
 
 }

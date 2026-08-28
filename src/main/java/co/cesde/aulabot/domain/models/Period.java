@@ -1,9 +1,26 @@
 package co.cesde.aulabot.domain.models;
 
+import jakarta.persistence.*;
+
+@Entity
+@Table (name = "periods")
+
 public class Period {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long periodId;
+    @Column (
+            nullable = false,
+            length = 20
+    )
     private String code;
+    @Column (
+            name = "start_date"
+    )
     private String startDate;
+    @Column (
+            name = "end_date"
+    )
     private String endDate;
 
     public Period() {

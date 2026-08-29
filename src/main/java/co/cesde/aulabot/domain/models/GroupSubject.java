@@ -1,9 +1,28 @@
 package co.cesde.aulabot.domain.models;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "group_subjects")
 public class GroupSubject {
+
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  @Column(name = "group_subject_id")
   private Long groupSubjectId;
+
+  @Column(name = "group_id", nullable = false)
   private Long groupId;
+
+  @Column(name = "subject_id", nullable = false)
   private Long subjectId;
+
+  @Column(name = "teacher_id", nullable = false)
   private Long teacherId;
 
   public GroupSubject() {

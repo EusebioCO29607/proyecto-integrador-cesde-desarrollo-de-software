@@ -1,10 +1,31 @@
 package co.cesde.aulabot.domain.models;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "grades")
 public class Grade {
+
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  @Column(name = "grade_id")
   private Long gradeId;
+
+  @Column(name = "group_subject_id", nullable = false)
   private Long groupSubjectId;
+
+  @Column(name = "student_id", nullable = false)
   private Long studentId;
+
+  @Column(name = "final_score")
   private Double finalScore;
+
+  @Column(name = "observation", length = 255)
   private String observation;
 
   public Grade() {

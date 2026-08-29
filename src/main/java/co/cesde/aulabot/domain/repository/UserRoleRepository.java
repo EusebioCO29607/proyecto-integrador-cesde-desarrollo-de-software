@@ -9,6 +9,8 @@ public interface UserRoleRepository {
 
         boolean update(UserRole userRoleUpdate);
 
+        UserRole findById(Long userId, Long roleId);
+
         List<UserRole> findByUserId(Long userId);
 
         List<UserRole> findByRoleId(Long roleId);
@@ -17,5 +19,5 @@ public interface UserRoleRepository {
 
         boolean existsByUserIdAndRoleId(Long userId, Long roleId);
 
-
+        boolean exists(Long userId, Long roleId);
 }

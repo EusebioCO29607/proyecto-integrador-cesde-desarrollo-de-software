@@ -1,7 +1,18 @@
 package co.cesde.aulabot.domain.models;
 
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = "users_roles")
+@IdClass(UserRoleId.class)
 public class UserRole {
+
+    @Id
+    @Column(name = "user_id")
     private Long userId;
+
+    @Id
+    @Column(name = "role_id")
     private Long roleId;
 
     public UserRole() {
@@ -31,9 +42,9 @@ public class UserRole {
     @Override
     public String toString() {
         return "UserRole{" +
-                "userId= '" + userId + '\'' +
-                ", roleId= " + roleId +
-                '}';
+            "userId= '" + userId + '\'' +
+            ", roleId= " + roleId +
+            '}';
     }
 
 }

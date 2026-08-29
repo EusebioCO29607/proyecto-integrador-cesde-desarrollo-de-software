@@ -1,8 +1,25 @@
 package co.cesde.aulabot.domain.models;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "programs")
 public class Program {
+
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  @Column(name = "program_id")
   private Long programId;
+
+  @Column(name = "name", length = 50, nullable = false)
   private String name;
+
+  @Column(name = "code", length = 20, nullable = false)
   private String code;
 
   public Program() {

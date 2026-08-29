@@ -1,11 +1,34 @@
 package co.cesde.aulabot.domain.models;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "Enrollments")
 public class Enrollment {
+
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  @Column(name = "enrollment_id")
   private Long enrollmentId;
+
+  @Column(name = "student_id", nullable = false)
   private Long studentId;
+
+  @Column(name = "group_id", nullable = false)
   private Long groupId;
+
+  @Column(name = "period_id", nullable = false)
   private Long periodId;
+
+  @Column(name = "status", length = 20)
   private String status;
+
+  @Column(name = "enrolled_at")
   private String enrolledAt;
 
   public Enrollment() {}
@@ -22,7 +45,7 @@ public class Enrollment {
     return studentId;
   }
 
-  public void setStudentId(long studentId) {
+  public void setStudentId(Long studentId) {
     this.studentId = studentId;
   }
 

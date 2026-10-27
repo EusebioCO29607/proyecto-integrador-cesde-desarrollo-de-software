@@ -1,6 +1,5 @@
 import StatCard from '../components/StatCard'
 
-// Nombres legibles de las colecciones, para el aviso de errores de carga.
 const NOMBRES = {
     Students: 'Estudiantes', docentes: 'Docentes', programas: 'Programas',
     periodos: 'Periodos', asignaturas: 'Asignaturas', grupos: 'Grupos',
@@ -8,10 +7,22 @@ const NOMBRES = {
     usuarios: 'Usuarios', roles: 'Roles', usuariosRoles: 'Asignación de roles',
 }
 
-// El Dashboard calcula sus cifras a partir de los datos que vienen del backend,
-// así que se actualiza cuando se crea, edita o elimina un registro.
 function Dashboard({ datos, errores, cargando, recargar }) {
-    const { estudiantes, docentes, programas, asignaturas, grupos, matriculas, notas } = datos
+
+    const { 
+        estudiantes, 
+        docentes, 
+        programas, 
+        asignaturas, 
+        grupos, 
+        matriculas, 
+        notas,
+        periodos = [],
+        cargas = [],
+        usuarios = [],
+        roles = [],
+        usuariosRoles = []
+    } = datos
 
     const contar = (estado) => matriculas.filter((m) => m.status === estado).length
     const valor = (n) => (cargando ? '…' : n)
@@ -23,12 +34,14 @@ function Dashboard({ datos, errores, cargando, recargar }) {
     const aprobadas = conNota.filter((n) => n.finalScore >= 3).length
 
     const generales = [
-        { etiqueta: 'Estudiantes', valor: estudiantes.length, color: 'blue' },
-        { etiqueta: 'Docentes',    valor: docentes.length,    color: 'purple' },
-        { etiqueta: 'Programas',   valor: programas.length,   color: 'amber' },
-        { etiqueta: 'Asignaturas', valor: asignaturas.length, color: 'green' },
-        { etiqueta: 'Grupos',      valor: grupos.length,      color: 'blue' },
-        { etiqueta: 'Matrículas',  valor: matriculas.length,  color: 'purple' },
+        { etiqueta: 'Estudiantes',      valor: estudiantes.length, color: 'blue' },
+        { etiqueta: 'Docentes',         valor: docentes.length,    color: 'purple' },
+        { etiqueta: 'Programas',        valor: programas.length,   color: 'amber' },
+        { etiqueta: 'Periodos',         valor: periodos.length,    color: 'green' },
+        { etiqueta: 'Asignaturas',      valor: asignaturas.length, color: 'green' },
+        { etiqueta: 'Grupos',           valor: grupos.length,      color: 'blue' },
+        { etiqueta: 'Carga académica',  valor: cargas.length,      color: 'amber' },
+        { etiqueta: 'Matrículas',       valor: matriculas.length,  color: 'purple' },
     ]
 
     const academicas = [
@@ -39,12 +52,19 @@ function Dashboard({ datos, errores, cargando, recargar }) {
         { etiqueta: 'Notas aprobadas (≥ 3.0)', valor: `${aprobadas} de ${conNota.length}`, color: 'green' },
     ]
 
+  
+    const seguridad = [
+        { etiqueta: 'Usuarios',            valor: usuarios.length,      color: 'blue' },
+        { etiqueta: 'Roles',               valor: roles.length,         color: 'purple' },
+        { etiqueta: 'Asignación de roles', valor: usuariosRoles.length, color: 'green' },
+    ]
+
     const conError = Object.entries(errores).filter(([, mensaje]) => mensaje)
 
     return (
         <section>
-            <h1 className="text-2xl text-gray-900">Dashboard</h1>
-            <p className="text-sm text-gray-500 mt-1">
+            <h1 className="text-2xl text-red-700">Dashboard</h1>
+            <p className="text-sm text-red-500 mt-1">
                 Resumen general de AulaBot
             </p>
 
@@ -78,6 +98,14 @@ function Dashboard({ datos, errores, cargando, recargar }) {
             <h2 className="text-sm font-medium text-gray-700 mt-8">Seguimiento académico</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-3">
                 {academicas.map((s) => (
+                    <StatCard key={s.etiqueta} etiqueta={s.etiqueta} valor={valor(s.valor)} color={s.color} />
+                ))}
+            </div>
+
+            {/* 4. Renderizamos la nueva sección de Seguridad */}
+            <h2 className="text-sm font-medium text-gray-700 mt-8">Seguridad</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-3">
+                {seguridad.map((s) => (
                     <StatCard key={s.etiqueta} etiqueta={s.etiqueta} valor={valor(s.valor)} color={s.color} />
                 ))}
             </div>

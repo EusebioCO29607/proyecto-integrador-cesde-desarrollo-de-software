@@ -5,7 +5,7 @@ import { ahora, fechaHora } from '../utils/etiquetas'
 const api = recurso('/users')
 
 function Usuarios({ datos, errores, cargando, recargar }) {
-    // Roles asignados a cada usuario, separados por coma.
+
     const rolesDe = (userId) =>
         datos.usuariosRoles
             .filter((ur) => ur.userId === userId)
@@ -30,8 +30,7 @@ function Usuarios({ datos, errores, cargando, recargar }) {
         { clave: 'status',       titulo: 'Estado', tipo: 'select', opciones: ['Activo', 'Inactivo', 'Bloqueado'] },
     ]
 
-    // La fecha de creación es obligatoria en el backend: se toma la hora actual
-    // al crear y se conserva la original al editar.
+
     const preparar = (valores) => ({ ...valores, createdAt: valores.createdAt ?? ahora() })
 
     return (

@@ -4,7 +4,6 @@ import { etiqueta, nombreCompleto, opciones } from '../utils/etiquetas'
 
 const api = recurso('/group-subjects')
 
-// Asignación de asignaturas y docentes a cada grupo (recurso /group-subjects).
 function CargaAcademica({ datos, errores, cargando, recargar }) {
     const columnas = [
         { clave: 'groupId',   titulo: 'Grupo', valor: (f) => etiqueta.grupo(datos, f.groupId) },

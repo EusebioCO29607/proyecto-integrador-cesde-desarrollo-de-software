@@ -15,7 +15,7 @@ const campos = [
     { clave: 'endDate',   titulo: 'Fecha de fin', tipo: 'date' },
 ]
 
-// Valida en el navegador que el periodo no termine antes de empezar.
+
 const preparar = (valores) => {
     if (valores.startDate && valores.endDate && valores.endDate < valores.startDate) {
         throw new Error('La fecha de fin no puede ser anterior a la fecha de inicio')

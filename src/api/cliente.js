@@ -1,12 +1,6 @@
-// Cliente HTTP para el backend de AulaBot.
-//
-// En desarrollo las rutas /api pasan por el proxy de Vite (ver vite.config.js).
-// Para otro entorno se puede definir VITE_API_URL, por ejemplo en un archivo .env.
+
 const BASE_URL = import.meta.env.VITE_API_URL ?? '/api'
 
-// Hace la petición y devuelve el JSON (o null si la respuesta no trae cuerpo).
-// Si el backend responde con error, lanza un Error con el mensaje que envía
-// el GlobalExceptionHandler ({ error, message, status, timestamp }).
 async function pedir(ruta, { metodo = 'GET', cuerpo } = {}) {
     let respuesta
     try {
@@ -35,7 +29,6 @@ async function pedir(ruta, { metodo = 'GET', cuerpo } = {}) {
     return datos
 }
 
-// Operaciones CRUD estándar de un recurso del backend (/students, /teachers...).
 export function recurso(endpoint) {
     return {
         listar:     ()           => pedir(endpoint),
@@ -45,7 +38,7 @@ export function recurso(endpoint) {
     }
 }
 
-// La relación usuario-rol tiene llave compuesta, así que se elimina por otra ruta.
+
 export function eliminarRolDeUsuario(userId, roleId) {
     return pedir(`/user-roles/user/${userId}/role/${roleId}`, { metodo: 'DELETE' })
 }

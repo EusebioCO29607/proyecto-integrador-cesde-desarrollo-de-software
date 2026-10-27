@@ -1,7 +1,6 @@
 import { useCallback, useEffect, useState } from 'react'
 import { recurso } from '../api/cliente'
 
-// Colecciones del backend que usa la aplicación: nombre interno -> endpoint.
 export const ENDPOINTS = {
     estudiantes:   '/students',
     docentes:      '/teachers',
@@ -20,8 +19,7 @@ export const ENDPOINTS = {
 const TODAS = Object.keys(ENDPOINTS)
 const vacio = Object.fromEntries(TODAS.map((nombre) => [nombre, []]))
 
-// Pide al backend las colecciones indicadas. Si una falla, las demás siguen
-// llegando y el mensaje de error queda en `errores[nombre]`.
+
 async function obtener(nombres) {
     const resultados = await Promise.allSettled(
         nombres.map((nombre) => recurso(ENDPOINTS[nombre]).listar())
@@ -42,9 +40,7 @@ async function obtener(nombres) {
     return { datos, errores }
 }
 
-// Carga todas las colecciones al iniciar y permite recargarlas después de
-// crear, editar o eliminar. Se cargan todas porque los módulos se cruzan entre
-// sí (una matrícula muestra el nombre del estudiante y el código del grupo).
+
 function useDatos() {
     const [datos, setDatos] = useState(vacio)
     const [errores, setErrores] = useState({})
@@ -56,7 +52,7 @@ function useDatos() {
         setCargando(false)
     }, [])
 
-    // recargar() recarga todo; recargar('estudiantes') solo esa colección.
+
     const recargar = useCallback(async (...nombres) => {
         aplicar(await obtener(nombres.length > 0 ? nombres : TODAS))
     }, [aplicar])

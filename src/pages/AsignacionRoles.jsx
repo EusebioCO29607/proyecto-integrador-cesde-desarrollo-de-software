@@ -4,8 +4,6 @@ import { etiqueta, opciones } from '../utils/etiquetas'
 
 const api = recurso('/user-roles')
 
-// Relación usuario-rol. Tiene llave compuesta (userId + roleId), por eso no se
-// edita: para cambiar un rol se elimina la asignación y se crea otra.
 function AsignacionRoles({ datos, errores, cargando, recargar }) {
     const columnas = [
         { clave: 'userId', titulo: 'Usuario', valor: (f) => etiqueta.usuario(datos, f.userId) },

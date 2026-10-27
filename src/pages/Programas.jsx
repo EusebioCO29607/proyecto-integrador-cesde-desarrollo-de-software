@@ -15,7 +15,7 @@ const campos = [
 ]
 
 function Programas({ datos, errores, cargando, recargar }) {
-    // Cantidad de asignaturas de cada programa, calculada con los datos ya cargados.
+
     const filas = datos.programas.map((p) => ({
         ...p,
         asignaturas: datos.asignaturas.filter((a) => a.programId === p.programId).length,

@@ -31,7 +31,6 @@ function Matriculas({ datos, errores, cargando, recargar }) {
         { clave: 'status',     titulo: 'Estado', tipo: 'select', opciones: ['Activa', 'Completada', 'Cancelada'] },
     ]
 
-    // El periodo de la matrícula normalmente es el mismo del grupo.
     const preparar = (valores) => {
         const periodId = valores.periodId ?? buscar(datos.grupos, 'groupId', valores.groupId)?.periodId ?? null
         if (periodId === null) throw new Error('Selecciona el periodo de la matrícula')

@@ -3,18 +3,10 @@ import { useState } from 'react'
 const claseCampo =
     'w-full border border-gray-300 rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 disabled:bg-gray-100'
 
-// Las opciones de un select pueden venir como texto ('Activo') o como
-// { valor, texto } cuando el valor es un id y se muestra un nombre.
 const normalizarOpcion = (opcion) =>
     typeof opcion === 'object' ? opcion : { valor: opcion, texto: opcion }
 
-// Formulario en ventana modal, usado tanto para crear como para editar.
-//
-// campos -> [{ clave, titulo, tipo, opciones, opcional, ayuda, min, max, step }]
-//           tipo: 'text' | 'email' | 'number' | 'date' | 'password' | 'textarea' | 'select'
-//           opcional: true si el campo puede quedar vacío (por defecto es obligatorio)
-// valorInicial -> objeto con los datos de la fila (vacío cuando es "Nuevo")
-// onGuardar    -> función async; si lanza un error, se muestra en el formulario
+
 function FormularioModal({ titulo, campos, valorInicial, onGuardar, onCancelar }) {
     const [valores, setValores] = useState(valorInicial)
     const [guardando, setGuardando] = useState(false)

@@ -1,13 +1,6 @@
 import Badge from './Badge'
 
-// Tabla reutilizable para todos los módulos.
-//
-// columnas -> [{ clave, titulo, tipo, valor }]
-//             tipo 'estado' pinta un Badge; valor(fila) calcula el texto a mostrar
-//             (útil para mostrar el nombre de un registro relacionado en vez de su id)
-// filas    -> arreglo de objetos; obtenerId(fila) devuelve su llave única
-// onNuevo / onEditar / onEliminar -> acciones que maneja la página padre.
-//             Si onEditar u onEliminar no llegan, ese botón no se muestra.
+
 function DataTable({
     columnas,
     filas,

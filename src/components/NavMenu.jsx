@@ -1,5 +1,4 @@
-// Los ítems del menú, agrupados por sección. Están en un array para no repetir
-// el <li>: si mañana agregas "Reportes", solo agregas una línea acá.
+
 const SECCIONES_MENU = [
     {
         titulo: null,

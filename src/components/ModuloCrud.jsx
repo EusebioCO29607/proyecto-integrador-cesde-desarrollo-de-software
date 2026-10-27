@@ -17,16 +17,7 @@ function limpiar(valores, campos) {
     return resultado
 }
 
-// Página genérica de un módulo: título + tabla + acciones Nuevo / Editar / Eliminar,
-// conectada a un recurso del backend. Todos los módulos reutilizan este componente.
-//
-// api          -> objeto de recurso() con crear / actualizar / eliminar
-// idClave      -> nombre del campo id del recurso ('studentId', 'teacherId'...)
-// valoresNuevo -> valores iniciales del formulario de creación
-// preparar     -> ajusta el objeto antes de enviarlo (ej. agregar la fecha de creación)
-// sinEditar / sinEliminar -> ocultan esas acciones cuando el backend no las ofrece
-// eliminar     -> reemplaza la eliminación por defecto (ej. llaves compuestas)
-// onRecargar   -> vuelve a pedir los datos al backend después de un cambio
+
 function ModuloCrud({
     titulo,
     descripcion,
@@ -49,7 +40,7 @@ function ModuloCrud({
     onRecargar,
     aviso,
 }) {
-    // Formulario abierto: null = ninguno; { modo: 'nuevo' | 'editar', fila }.
+
     const [formulario, setFormulario] = useState(null)
     // Fila que se está por eliminar (para pedir confirmación).
     const [porEliminar, setPorEliminar] = useState(null)
@@ -79,8 +70,7 @@ function ModuloCrud({
             setPorEliminar(null)
             await onRecargar()
         } catch (e) {
-            // El backend responde con un error genérico cuando el registro está
-            // referenciado por otros (ej. un programa con asignaturas).
+           
             const generico = e.message.includes('error inesperado')
             setErrorEliminar(
                 generico
@@ -97,7 +87,7 @@ function ModuloCrud({
         setErrorEliminar(null)
     }
 
-    // Búsqueda sobre el texto que se ve en cada columna.
+  
     const texto = busqueda.trim().toLowerCase()
     const filasFiltradas = texto
         ? filas.filter((fila) =>

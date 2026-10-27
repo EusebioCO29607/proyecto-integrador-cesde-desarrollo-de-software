@@ -1,4 +1,4 @@
-// Tarjeta de estadística reutilizable: etiqueta arriba (con su color) y número grande abajo.
+
 function StatCard({ etiqueta, valor, color = 'blue' }) {
     const colores = {
         blue:   'bg-blue-50 text-blue-700',
